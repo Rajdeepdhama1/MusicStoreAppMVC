@@ -14,12 +14,14 @@ namespace MusicStoreMVC.Controllers
         // GET: Store
         public ActionResult Index()
         {
-            var genres = new List<Genre>
-            {
-                new Genre { Name = "Disco"},
-                new Genre { Name = "Jazz"},
-                new Genre { Name = "Rock"}
-            };
+            //var genres = new List<Genre>
+            //{
+            //    new Genre { Name = "Disco"},
+            //    new Genre { Name = "Jazz"},
+            //    new Genre { Name = "Rock"}
+            //};
+            MusicStoreEntities dbStore = new MusicStoreEntities();
+            var genres = dbStore.Genres.ToList();
             return View(genres);
         }
 
